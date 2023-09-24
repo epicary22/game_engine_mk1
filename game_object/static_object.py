@@ -1,4 +1,4 @@
-from game_object import GameObject
+from game_object.game_object import GameObject
 
 
 class StaticObject(GameObject):
