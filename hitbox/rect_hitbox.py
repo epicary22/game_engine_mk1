@@ -1,4 +1,4 @@
-from hitbox import Hitbox
+from hitbox.hitbox import Hitbox
 
 
 class RectHitbox(Hitbox):

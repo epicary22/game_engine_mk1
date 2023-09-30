@@ -33,18 +33,16 @@ class Hitbox:
 			if self.center:
 				self.center = self._round_vector2(self.center)
 			
-		if not self.center and not self.left_top:
+		if self.center is None and self.left_top is None:
 			raise Exception("Did not provide a pair of center or a left-top coordinates.")
-		elif not self.left_top:
+		elif self.left_top is None:
 			self._calculate_left_top()
-		elif not self.center:
+		elif self.center is None:
 			self._calculate_center()
 		else:
 			raise Exception("Cannot process both center and left-top values given.")
 		if self.rounding:
 			self._round_position()
-		
-		self.print_pos_stats()
 		
 	def _calculate_center(self) -> None:
 		"""
