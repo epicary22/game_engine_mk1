@@ -46,7 +46,7 @@ class Hitbox:
 		
 	def _calculate_center(self) -> None:
 		"""
-		Calculates the center coordinate of the hitbox using the left-top and dimensionsd.
+		Calculates the center coordinate of the hitbox using the left-top and dimensions.
 		"""
 		center_x = self.left_top.x + 0.5 * self.dimensions.x
 		center_y = self.left_top.y + 0.5 * self.dimensions.y

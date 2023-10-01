@@ -48,4 +48,15 @@ class CircleHitbox(Hitbox):
 		return math.sqrt((self.center.x - other_circle.center.x) ** 2 + (self.center.y - other_circle.center.y) ** 2) - self.radius - other_circle.radius
 
 	def _distance_to_rect(self, other_rect: Hitbox) -> float:
+		# in_x_range = (rect.left_x < this.center.x < rect.right_x)
+		# in_y_range = (rect.top_y < this.center.y < rect.bottom_y)
+		# if in_x_range and in_y_range:
+		# 	distance = 0
+		# elif in_x_range and not in_y_range:
+		# 	distance = max min bull
+		# elif in_y_range and not in_x_range:
+		#	distance = ditto bull
+		# else:
+		#	distance = slope bull
+		# return distance
 		pass
