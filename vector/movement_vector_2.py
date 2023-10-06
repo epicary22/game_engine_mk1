@@ -79,6 +79,6 @@ class MovementVector2:
 		new_movement_vector.velocity.x += new_movement_vector.acceleration.x * frames
 		new_movement_vector.velocity.y += new_movement_vector.acceleration.y * frames
 		return new_movement_vector
-	
+
 	# TODO add more vector-y methods
 	
