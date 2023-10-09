@@ -47,7 +47,9 @@ class CircleHitbox(Hitbox):
 		"""
 		return math.sqrt((self.center.x - other_circle.center.x) ** 2 + (self.center.y - other_circle.center.y) ** 2) - self.radius - other_circle.radius
 
-	def _distance_to_rect(self, other_rect: Hitbox) -> float:
+	# TODO this can be a Hitbox method... it just finds the x and y distances between the hitboxes' bounding rects.
+	# TODO however, there is still some distance required for circle hitboxes. Figure this out.
+	def xy_distance_to_rect(self, other_rect: Hitbox) -> tuple[float, float]:
 		# in_x_range = (rect.left_x < this.center.x < rect.right_x)
 		# in_y_range = (rect.top_y < this.center.y < rect.bottom_y)
 		# if in_x_range and in_y_range:
@@ -59,4 +61,7 @@ class CircleHitbox(Hitbox):
 		# else:
 		#	distance = slope bull
 		# return distance
-		pass
+
+		x_distance = abs(other_rect.center.x - self.center.x) - (other_rect.dimensions.x / 2) - self.radius
+		y_distance = abs(other_rect.center.y - self.center.y) - (other_rect.dimensions.y / 2) - self.radius
+		return x_distance, y_distance
